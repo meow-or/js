@@ -1,16 +1,54 @@
 
 let vasya = { name: "Вася", age: 25 };
 let petya = { name: "Петя", age: 30 };
-let masha = { name: "Маша", age: 28 };
+let masha = { name: "Маша", age: 29 };
 
-let users = [ vasya, petya, masha ];
+let arr = [ vasya, petya, masha ];
 
-function sortByAge(arr) {
-  return arr.sort((a,b) => a.age - b.age)
+function getAverageAge(arr) {
+  let sum=0;
+
+  for (let item of arr) {
+    sum += item.age;
+  }
+
+  return sum/arr.length;
 }
 
+console.log(getAverageAge(arr));
 
-console.log(sortByAge(users));
+
+// let arr = [1, 2, 3];
+
+// function getRandomIndex(length) {
+//   indexes = [];
+
+//   // for (let i = 0; i < length; i++) {
+
+//   // }
+
+  
+// }
+
+// function shuffle(arr) {
+
+// }
+
+// console.log(shuffle(arr));
+
+
+// let vasya = { name: "Вася", age: 25 };
+// let petya = { name: "Петя", age: 30 };
+// let masha = { name: "Маша", age: 28 };
+
+// let users = [ vasya, petya, masha ];
+
+// function sortByAge(arr) {
+//   return arr.sort((a,b) => a.age - b.age)
+// }
+
+
+// console.log(sortByAge(users));
 
 
 
