@@ -1,21 +1,38 @@
+let strings = ["кришна", "кришна", "харе", "харе",
+  "харе", "харе", "кришна", "кришна", ":-O"
+];
 
-let vasya = { name: "Вася", age: 25 };
-let petya = { name: "Петя", age: 30 };
-let masha = { name: "Маша", age: 29 };
+function uniqArr(arr) {
+  let uniq = [];
 
-let arr = [ vasya, petya, masha ];
+  arr.forEach(item => {
+    !uniq.includes(item) ? uniq.push(item) : null;
+  });
 
-function getAverageAge(arr) {
-  let sum=0;
-
-  for (let item of arr) {
-    sum += item.age;
-  }
-
-  return sum/arr.length;
+  return uniq;
 }
 
-console.log(getAverageAge(arr));
+console.log(uniqArr(strings));
+
+
+
+// let vasya = { name: "Вася", age: 25 };
+// let petya = { name: "Петя", age: 30 };
+// let masha = { name: "Маша", age: 29 };
+
+// let arr = [ vasya, petya, masha ];
+
+// function getAverageAge(arr) {
+//   let sum=0;
+
+//   for (let item of arr) {
+//     sum += item.age;
+//   }
+
+//   return sum/arr.length;
+// }
+
+// console.log(getAverageAge(arr));
 
 
 // let arr = [1, 2, 3];
