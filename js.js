@@ -1,18 +1,35 @@
-let strings = ["кришна", "кришна", "харе", "харе",
-  "харе", "харе", "кришна", "кришна", ":-O"
+let users = [
+  {id: 'john', name: "John Smith", age: 20},
+  {id: 'ann', name: "Ann Smith", age: 24},
+  {id: 'pete', name: "Pete Peterson", age: 31},
 ];
 
-function uniqArr(arr) {
-  let uniq = [];
-
-  arr.forEach(item => {
-    !uniq.includes(item) ? uniq.push(item) : null;
-  });
-
-  return uniq;
+function groupById(arr) {
+  return arr.reduce((acc, item) => {
+      acc[item.id] = item;
+    return acc;
+  }, {});
 }
 
-console.log(uniqArr(strings));
+let usersById = groupById(users);
+
+console.log(usersById);
+
+// let strings = ["кришна", "кришна", "харе", "харе",
+//   "харе", "харе", "кришна", "кришна", ":-O"
+// ];
+
+// function uniqArr(arr) {
+//   let uniq = [];
+
+//   arr.forEach(item => {
+//     !uniq.includes(item) ? uniq.push(item) : null;
+//   });
+
+//   return uniq;
+// }
+
+// console.log(uniqArr(strings));
 
 
 
