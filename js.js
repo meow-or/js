@@ -1,19 +1,46 @@
-let users = [
-  {id: 'john', name: "John Smith", age: 20},
-  {id: 'ann', name: "Ann Smith", age: 24},
-  {id: 'pete', name: "Pete Peterson", age: 31},
-];
-
-function groupById(arr) {
-  return arr.reduce((acc, item) => {
-      acc[item.id] = item;
-    return acc;
-  }, {});
+let range = {
+  from: 1,
+  to: 5
 }
 
-let usersById = groupById(users);
+range[Symbol.iterator] = function() {
+  return {
+    current: this.from,
+    last: this.to,
 
-console.log(usersById);
+    next() {
+      if(this.current <= this.last) {
+        return {
+          done: false,
+          value: this.current++
+        }
+      } else {
+        return { done: true }
+      }
+    }
+  }
+}
+
+
+for (let num of range) {
+  console.log(num);
+}
+// let users = [
+//   {id: 'john', name: "John Smith", age: 20},
+//   {id: 'ann', name: "Ann Smith", age: 24},
+//   {id: 'pete', name: "Pete Peterson", age: 31},
+// ];
+
+// function groupById(arr) {
+//   return arr.reduce((acc, item) => {
+//       acc[item.id] = item;
+//     return acc;
+//   }, {});
+// }
+
+// let usersById = groupById(users);
+
+// console.log(usersById);
 
 // let strings = ["кришна", "кришна", "харе", "харе",
 //   "харе", "харе", "кришна", "кришна", ":-O"
