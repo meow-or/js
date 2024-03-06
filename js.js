@@ -1,30 +1,109 @@
-let range = {
-  from: 1,
-  to: 5
+let str = '𝒳😂';
+
+let chars = [];
+
+for (let char of str) {
+  chars.push(char);
 }
 
-range[Symbol.iterator] = function() {
-  return {
-    current: this.from,
-    last: this.to,
+console.log(chars);
 
-    next() {
-      if(this.current <= this.last) {
-        return {
-          done: false,
-          value: this.current++
-        }
-      } else {
-        return { done: true }
-      }
-    }
-  }
-}
+// let chars = Array.from(str);
+// console.log(chars[1]); 
+
+// let range = {
+//   from: 1,
+//   to: 5,
+
+//   [Symbol.iterator]() {
+//     this.current = this.from;
+//     return this;
+//   },
+
+//   next() {
+//     if (this.current <= this.to) {
+//       return { done: false, value: this.current++ };
+//     } else {
+//       return { done: true };
+//     }
+//   }
+// };
+
+// arr = Array.from(range, num => num ** 2);
+// arr.push(6);
+
+// console.log(arr)
 
 
-for (let num of range) {
-  console.log(num);
-}
+// let str = 'Hello';
+
+// let iterator = str[Symbol.iterator]();
+
+// while(true) {
+//   let res = iterator.next();
+
+//   if (res.done) break;
+//   console.log(res.value);
+// }
+
+// console.log(iterator);
+
+
+// for (let char of '𝒳😂') {
+//   console.log(char)
+// }
+
+
+// let range = {
+//   from: 1,
+//   to: 5,
+
+
+//   [Symbol.iterator] () {
+//     this.current = this.from;
+//     return this;
+//   },
+
+//   next() {
+//     if(this.current <= this.to) {
+//       return { done: false, value: this.current++ }
+//     } else {
+//       return { done: true }
+//     }
+//   }
+// }
+
+
+// for (let num of range) {
+//   console.log(num);
+// }
+
+// let range = {
+//   from: 1,
+//   to: 5
+// }
+
+// range[Symbol.iterator] = function() {
+//   return {
+//     current: this.from,
+//     last: this.to,
+
+//     next() {
+//       if(this.current <= this.last) {
+//         return {
+//           done: false,
+//           value: this.current++
+//         }
+//       } else {
+//         return { done: true }
+//       }
+//     }
+//   }
+// }
+
+// for (let num of range) {
+//   console.log(num);
+// }
 // let users = [
 //   {id: 'john', name: "John Smith", age: 20},
 //   {id: 'ann', name: "Ann Smith", age: 24},
