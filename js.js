@@ -1,12 +1,20 @@
-let str = '𝒳😂';
-
-let chars = [];
-
-for (let char of str) {
-  chars.push(char);
+function slice(str, start, end) {
+  return Array.from(str).slice(start, end).join('');
 }
 
-console.log(chars);
+let str = '𝒳😂𩷶';
+
+console.log(slice(str, 1, 3));
+
+// let str = '𝒳😂';
+
+// let chars = [];
+
+// for (let char of str) {
+//   chars.push(char);
+// }
+
+// console.log(chars);
 
 // let chars = Array.from(str);
 // console.log(chars[1]); 
