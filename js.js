@@ -1,10 +1,85 @@
-function slice(str, start, end) {
-  return Array.from(str).slice(start, end).join('');
-}
+let map = new Map([
+  ['banana', 1],
+  ['orange', 2],
+  ['apple', { name: 'Pavel' }]
+]);
 
-let str = '𝒳😂𩷶';
+let obj = Object.fromEntries(map);
 
-console.log(slice(str, 1, 3));
+console.log(obj)
+
+
+
+
+//Object.fromEntries: Object из Map:
+
+// let prices = Object.fromEntries([
+//   ['banana', 1],
+//   ['orange', 2],
+//   ['meat', 4]
+// ]);
+
+// console.log(prices)
+
+
+// let obj = {
+//   name: "John",
+//   age: 30 
+// };
+
+// let map = new Map(Object.entries(obj));
+
+// console.log(Object.entries(obj));
+
+
+// let recipeMap = new Map([
+//   ['огурец', 500],
+//   ['potato', 400],
+//   ['onion', 300]  
+// ]);
+
+// for (let entry of recipeMap) {
+//   console.log(entry[1]); 
+// }
+
+// recipeMap.forEach((value, key, map) => {
+//   console.log(`${key}: ${value}`);
+// });
+
+
+
+
+
+
+
+// let john = { name: "John" };
+
+// let map = new Map();
+
+// map.set("1", "str")
+//   .set(2, "num")
+//   .set(true, 'bool');
+
+// console.log(map)
+
+// let map = new Map();
+
+// map.set('some', "{321: 1}");
+// map.set(1, {321: 2});
+// map.set(false, 22);
+
+// console.log(map.size);
+
+
+
+// function slice(str, start, end) {
+//   return Array.from(str).slice(start, end).join('');
+// }
+
+// let str = '𝒳😂𩷶';
+
+// console.log(slice(str, 1, 3));
+
 
 // let str = '𝒳😂';
 
