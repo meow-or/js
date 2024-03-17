@@ -1,12 +1,62 @@
-let map = new Map([
-  ['banana', 1],
-  ['orange', 2],
-  ['apple', { name: 'Pavel' }]
-]);
+function aclean(arr) {
+  let map = new Map();
 
-let obj = Object.fromEntries(map);
+  arr.forEach(item => map.set(item.toLowerCase().split('').sort().join(''), item));
 
-console.log(obj)
+  return Array.from(map.values());
+  
+}
+
+let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+
+console.log(aclean(arr));
+
+
+
+// function unique(arr) {
+//   return Array.from(new Set(arr));
+// }
+
+// let values = ["Hare", "Krishna", "Hare", "Krishna",
+//   "Krishna", "Krishna", "Hare", "Hare", ":-O"
+// ];
+
+//console.log(unique(values));
+
+
+
+// let set = new Set(['orange', 'apple', 'banana']);
+
+// set.forEach( (val, val2, set) => console.log(val2))
+
+// for (let val of set) console.log(val);
+
+// let set = new Set();
+
+// let john = { name: 'john' };
+// let pete = { name: 'pete' };
+// let mary = { name: 'mary' };
+
+// set.add(john);
+// set.add(mary);
+// set.add(pete);
+// set.add(john);
+// set.add(mary);
+
+// for (let u of set) {
+//   console.log(u.name)
+// }
+
+
+// let map = new Map([
+//   ['banana', 1],
+//   ['orange', 2],
+//   ['apple', { name: 'Pavel' }]
+// ]);
+
+// let obj = Object.fromEntries(map);
+
+// console.log(obj)
 
 
 
