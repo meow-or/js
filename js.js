@@ -1,15 +1,51 @@
-function aclean(arr) {
-  let map = new Map();
+let john = { name: 'John' };
 
-  arr.forEach(item => map.set(item.toLowerCase().split('').sort().join(''), item));
+let weakMap = new WeakMap();
 
-  return Array.from(map.values());
+
+weakMap.set(john, 'ok');
+
+john = null;
+
+console.log(weakMap);
+
+
+//
+
+
+ //let arr = [ john ];
+
+// let map = new Map();
+
+// map.set(john, "...")
+
+// john = null;
+
+// console.log(Array.from(map.keys()))
+
+// let map = new Map();
+
+// map.set("name", "John");
+
+// let keys = Array.from(map.keys());
+
+
+// keys.push("more");
+
+// console.log(keys)
+
+// function aclean(arr) {
+//   let map = new Map();
+
+//   arr.forEach(item => map.set(item.toLowerCase().split('').sort().join(''), item));
+
+//   return Array.from(map.values());
   
-}
+// }
 
-let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+// let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
 
-console.log(aclean(arr));
+// console.log(aclean(arr));
 
 
 
