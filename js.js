@@ -1,17 +1,31 @@
-let john = { name: 'John' };
+let messages = [
+    {text: "Hello", from: "John"},
+    {text: "How goes?", from: "John"},
+    {text: "See you soon", from: "Alice"}
+];
 
-let weakMap = new WeakMap();
+let readMessages = new WeakSet();
+
+readMessages.add(messages[0]);
+readMessages.add(messages[1]);
+
+console.log(readMessages.has(messages[0]));
+
+// let visitsCountMap = new Map();
+
+// function countUser(user) {
+//   let count = visitsCountMap.get(user) || 0;
+//   visitsCountMap.set(user, count + 1);
+// }
+
+// let john = { name: 'John' };
+
+// let weakMap = new WeakMap();
 
 
-weakMap.set(john, 'ok');
+// weakMap.set(john, 'ok');
 
-john = null;
-
-console.log(weakMap);
-
-
-//
-
+//john = null;
 
  //let arr = [ john ];
 
