@@ -1,15 +1,52 @@
-let messages = [
-    {text: "Hello", from: "John"},
-    {text: "How goes?", from: "John"},
-    {text: "See you soon", from: "Alice"}
-];
+let salaries = {
+  "John": 100,
+  "Pete": 300,
+  "Mary": 250
+};
 
-let readMessages = new WeakSet();
+function sumSalaries(salaries) {
+    let sum = 0;
 
-readMessages.add(messages[0]);
-readMessages.add(messages[1]);
+    for (let salary of Object.values(salaries)) {
+        sum += salary;
+    }
 
-console.log(readMessages.has(messages[0]));
+    return sum;
+}
+
+console.log(sumSalaries(salaries))
+
+// let prices = {
+//     banana: 1,
+//     orange: 2,
+//     meat: 4
+// }
+
+// let doublePrices = Object.fromEntries(Object.entries(prices).map(([key, val]) =>  ([key, val * 2])));
+
+// console.log(doublePrices);
+
+// let user = {
+//     name: 'John',
+//     age: 30
+// };
+
+// for (let entr of Object.entries(user)) {
+//     console.log(entr)
+// }
+
+// let messages = [
+//     {text: "Hello", from: "John"},
+//     {text: "How goes?", from: "John"},
+//     {text: "See you soon", from: "Alice"}
+// ];
+
+// let readMessages = new WeakSet();
+
+// readMessages.add(messages[0]);
+// readMessages.add(messages[1]);
+
+// console.log(readMessages.has(messages[0]));
 
 // let visitsCountMap = new Map();
 
