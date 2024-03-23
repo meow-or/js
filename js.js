@@ -1,24 +1,143 @@
+
 let salaries = {
   "John": 100,
   "Pete": 300,
   "Mary": 250
 };
 
-function sumSalaries(salaries) {
-    let sum = 0;
+function topSalary(obj) {
+  // let sals = [];
+  // let users = {};
+  let max = 0;
+  let maxName = null;
 
-    for (let salary of Object.values(salaries)) {
-        sum += salary;
+  for (let [name, salary] of Object.entries(obj)) {
+    // sals.push(sal);
+    // users[sal] = nam;
+
+    if (max < salary) {
+      max = salary;
+      maxName = name;
     }
+  }
 
-    return sum;
+  // let maxSalary = Math.max(...sals);
+  // return users[maxSalary];
+
+  return maxName;
+
+
 }
 
-console.log(sumSalaries(salaries))
+console.log(topSalary(salaries));
+
+
+// let user = {
+//   name: "John",
+//   years: 30
+// };
+
+// let { name, years: age, isAdmin = false } = user;
+
+// console.log(name, age, isAdmin);
+
+
+// let title, width, height;
+
+// ({ title, width, height } = { title: 'Menu', width: 200, height: 100 });
+
+// console.log(title);
+
+// let options = {
+//   title: "Menu",
+//   width: 100,
+//   height: 200,
+
+// };
+
+// let { title, ...rest } = options;
+
+// console.log(rest.height);
+
+// let [name = prompt('name?'), surname = prompt('surname?')] = ["Julius"];
+
+// console.log(name, surname);
+
+
+// let [name = "Guest", surname = "Anonimous"] = ['Julius'];
+// console.log(name, surname);
+
+// let [a, b, ...other] = ["Julius", "Caesar", "Consul", "of the Roman Republic"];
+
+// console.log(other);
+
+
+// let guest = "Jane"; 
+// let admin = "Pete";
+
+// [guest, admin] = [ admin, guest ];
+
+// console.log(guest);
+
+
+// let user = {
+//   name: "John",
+//   age: 30
+// };
+
+// let map = new Map();
+
+// map.set("name", user.name);
+
+// for (let [key, value] of map) {
+//   console.log(`${key} => ${value}`)
+// }
+
+
+
+// let user = {};
+
+// [user.name, user.surname] = "Gubka Bob".split(' ');
+
+// console.log(user)
+
+// let [a, b, c] = "abc";
+// let [one, two, three] = new Set([1, 2 ,3]);
+
+//console.log(three);
+
+
+// let [firstName, surname] = "Ilya Kantor".split(' ');
+
+// console.log(surname);
+
+// let user = {
+//   name: 'John',
+//   age: 30
+// };
+
+// function count(obj) {
+//   return Object.keys(obj).length;
+// }
+
+// console.log(count(user));
+
+
+// let salaries = {
+//   "John": 100,
+//   "Pete": 300,
+//   "Mary": 250
+// };
+
+// function sumSalaries(salaries) {
+//     return Object.values(salaries).reduce((acc, value) => acc + value, 0);
+// }
+
+// console.log(sumSalaries(salaries))
 
 // let prices = {
 //     banana: 1,
-//     orange: 2,
+//     orange: 2,0
 //     meat: 4
 // }
 
