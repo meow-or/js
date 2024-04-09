@@ -1,19 +1,49 @@
-let schedule = `{
-  "meetups": [
-    {"title":"Conference","date":"2017-11-30T12:00:00.000Z"},
-    {"title":"Birthday","date":"2017-04-18T12:00:00.000Z"}
-  ]
-}`;
+let room = {
+  number: 23
+};
 
-schedule = JSON.parse(schedule, function (key, value) {
-  if(key == 'date') {
-    return new Date(value);
-  }
+let meetup = {
+  title: "Совещание",
+  occupiedBy: [{name: "Иванов"}, {name: "Петров"}],
+  place: room
+};
 
-  return value;
-});
+// цикличные ссылки
+room.occupiedBy = meetup;
+meetup.self = meetup;
 
-console.log(schedule)
+
+console.log(JSON.stringify(meetup, function replacer(key, value) {
+    return (key != "" && value == meetup) ? undefined : value;
+}, 2))
+
+
+
+// let user = {
+//   name: "Василий Иванович",
+//   age: 35
+// };
+
+// let js = JSON.parse(JSON.stringify(user, '', 2));
+
+// console.log(js)
+
+// let schedule = `{
+//   "meetups": [
+//     {"title":"Conference","date":"2017-11-30T12:00:00.000Z"},
+//     {"title":"Birthday","date":"2017-04-18T12:00:00.000Z"}
+//   ]
+// }`;
+
+// schedule = JSON.parse(schedule, function (key, value) {
+//   if(key == 'date') {
+//     return new Date(value);
+//   }
+
+//   return value;
+// });
+
+// console.log(schedule)
 
 // let str = '{"title":"Conference","date":"2017-11-30T12:00:00.000Z"}';
 
