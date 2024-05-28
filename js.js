@@ -1,10 +1,18 @@
-{
-  let str = 'string';
+let value = "Сюрприз!";
 
-  //console.log(str)
+function f() {
+  let value = "ближайшее значение";
+
+  function g() {
+    console.log(value) // в консоли: напишите alert(value); Сюрприз!
+  }
+
+  return g;
 }
 
-console.log(str)
+let g = f();
+g();
+
 
 // let str = 'hello world';
 
