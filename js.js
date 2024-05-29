@@ -1,18 +1,14 @@
-let value = "Сюрприз!";
 
-function f() {
-  let value = "ближайшее значение";
+function sum (a) {
+  let sum = a;
 
-  function g() {
-    console.log(value) // в консоли: напишите alert(value); Сюрприз!
+  return function (b) {
+    return a + b;
   }
-
-  return g;
 }
 
-let g = f();
-g();
 
+console.log(sum(20)(-8))
 
 // let str = 'hello world';
 
