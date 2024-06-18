@@ -1,14 +1,27 @@
+let arr = [1, 2, 3, 4, 5, 6, 7];
 
-function sum (a) {
-  let sum = a;
-
-  return function (b) {
-    return a + b;
+function inBetween(a, b) {
+  return function(x) {
+    return x >= a && x <= b;
   }
 }
 
+function inArr(arr) {
 
-console.log(sum(20)(-8))
+}
+
+
+console.log(arr.filter(inBetween(3, 6)));
+
+
+// function sum (a) {
+//   return function (b) {
+//     return a + b;
+//   }
+// }
+
+
+// console.log(sum(20)(-8))
 
 // let str = 'hello world';
 
