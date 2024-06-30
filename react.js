@@ -1,42 +1,38 @@
-function WarningBanner(props) {
-  if(!props.warn) {
-    return null;
-  }
+
+function Blog(props) {
+
+  const sidebar = (
+    <ul>
+      {props.posts.map(post => 
+        <li key={post.id}>
+          {post.title}
+        </li>
+      )}
+    </ul>
+  );
+
+  const content = props.posts.map(post =>
+    <div key={post.id}>
+        <h3>{post.title}</h3>
+        <p>{post.content}</p>
+    </div>
+  );
 
   return (
-    <div className="warning">
-        Warning!
+    <div>
+      {sidebar}
+      <hr/>
+      {content}
     </div>
   );
 }
 
-class Page extends React.Component {
-    constructor(props) {
-      super(props);
-
-      this.state = { showWarning: true };
-      this.handkeToggleClick = this.handkeToggleClick.bind(this);
-    }
-
-    handkeToggleClick() {
-      this.setState(state => ({
-        showWarning: !state.showWarning
-      }));
-    }
-
-    render() {
-      return (
-        <div>
-          <WarningBanner warn={this.state.showWarning} />
-          <button onClick={this.handkeToggleClick}>
-            {this.state.showWarning ? 'Hide': 'Show'}
-          </button>
-        </div>
-      );
-    }
-}
+const posts = [
+  {id: 1, title: 'Привет, мир', content: 'Добро пожаловать в изучение React!'},
+  {id: 2, title: 'Установка', content: 'Вы можете установить React из npm.'}
+];
 
 ReactDOM.render(
-  <Page/>,
+  <Blog posts={posts}/>,
   document.querySelector('#root')
 );
